@@ -1,0 +1,62 @@
+api_version = "2023-07"
+
+[capabilities]
+api_access = true
+network_access = true
+block_progress = true
+#[START custom-banner.config-ext-point]
+[[extensions]]
+type = "ui_extension"
+name = "custom-banner"
+handle = "custom-banner"
+
+[[extensions.targeting]]
+target = "purchase.checkout.block.render"
+module = "./src/index.jsx"
+export = "checkoutBlock"
+
+[[extensions.targeting]]
+target = "purchase.checkout.delivery-address.render-before"
+module = "./src/index.jsx"
+export = "deliveryAddress"
+#[END custom-banner.config-ext-point]
+
+#[START custom-banner.req-properties]
+[settings]
+  [[settings.fields]]
+  key = "title"
+  type = "single_line_text_field"
+  name = "Banner title"
+ #[END custom-banner.req-properties]
+ #[START custom-banner.optional-properties]
+  description = "Enter a title for the banner."
+#[END custom-banner.optional-properties]
+#[START custom-banner.req-properties]
+  [[settings.fields]]
+  key = "description"
+  type = "single_line_text_field"
+  name = "Banner description"
+#[END custom-banner.req-properties]
+#[START custom-banner.optional-properties]
+  description = "Enter a description for the banner."
+#[END custom-banner.optional-properties]
+#[START custom-banner.req-properties]
+  [[settings.fields]]
+  key = "status"
+  type = "single_line_text_field"
+  name = "Banner status"
+#[END custom-banner.req-properties]
+#[START custom-banner.optional-properties]
+    [[settings.fields.validations]]
+    name = "choices"
+    value = "[\"info\", \"success\", \"warning\", \"critical\"]"
+# [END custom-banner.optional-properties]
+#[START custom-banner.req-properties]
+  [[settings.fields]]
+  key = "collapsible"
+  type = "boolean"
+  name = "Show collapsible description."
+#[END custom-banner.req-properties]
+#[START custom-banner.optional-properties]
+  description = "Display controls to expand or collapse the banner description."
+#[END custom-banner.optional-properties]
