@@ -4,7 +4,7 @@ This repo contains an example app that uses [checkout UI extensions](https://sho
 
 For more information, and for a walkthrough of this code, review our tutorial: [Build a custom banner checkout extension](https://shopify.dev/docs/apps/checkout/custom/banners/build)
 
-This example app is also available with a [javascript extension](https://github.com/Shopify/example-checkout--product-offer-pre-purchase--js).
+This example app is also available with a [javascript extension](https://github.com/Shopify/example-checkout--custom-banner--js).
 
 ## Running this app
 
