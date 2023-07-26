@@ -16,12 +16,12 @@ handle = "custom-banner"
 #[START custom-banner.config-ext-point]
 [[extensions.targeting]]
 target = "purchase.checkout.block.render"
-module = "./src/index.jsx"
+module = "./src/Checkout.jsx"
 export = "checkoutBlock"
 
 [[extensions.targeting]]
 target = "purchase.checkout.delivery-address.render-before"
-module = "./src/index.jsx"
+module = "./src/Checkout.jsx"
 export = "deliveryAddress"
 #[END custom-banner.config-ext-point]
 
