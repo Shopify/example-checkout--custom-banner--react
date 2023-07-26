@@ -2,7 +2,7 @@
 
 This repo contains an example app that uses [checkout UI extensions](https://shopify.dev/docs/api/checkout-ui-extensions) to build a custom banner using React.
 
-For more information, and for a walkthrough of this code, review our tutorial: [Build a custom banner checkout extension](https://shopify.dev/docs/apps/checkout/custom/banners/build)
+For more information, and for a walkthrough of this code, review our tutorial: [Build a custom banner checkout extension](https://shopify.dev/docs/apps/checkout/custom/banners/build?languagePreferences=remix%2Creact)
 
 This example app is also available with a [javascript extension](https://github.com/Shopify/example-checkout--custom-banner--js).
 
