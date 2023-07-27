@@ -1,5 +1,5 @@
 {
-  "name": "tuesday",
+  "name": "custom-banner",
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production remix build",
