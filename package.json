@@ -1,5 +1,5 @@
 {
-  "name": "custom-banner",
+  "name": "custom-banner-react",
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production remix build",
