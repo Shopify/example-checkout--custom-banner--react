@@ -51,8 +51,8 @@ network_access = true
 # https://shopify.dev/docs/api/checkout-ui-extensions/unstable/configuration#settings-definition
 
 #[START custom-banner.req-properties]
-[settings]
-  [[settings.fields]]
+[extensions.settings]
+  [[extensions.settings.fields]]
   key = "title"
   type = "single_line_text_field"
   name = "Banner title"
@@ -61,7 +61,7 @@ network_access = true
   description = "Enter a title for the banner."
 #[END custom-banner.optional-properties]
 #[START custom-banner.req-properties]
-  [[settings.fields]]
+  [[extensions.settings.fields]]
   key = "description"
   type = "single_line_text_field"
   name = "Banner description"
@@ -70,18 +70,18 @@ network_access = true
   description = "Enter a description for the banner."
 #[END custom-banner.optional-properties]
 #[START custom-banner.req-properties]
-  [[settings.fields]]
+  [[extensions.settings.fields]]
   key = "status"
   type = "single_line_text_field"
   name = "Banner status"
 #[END custom-banner.req-properties]
 #[START custom-banner.optional-properties]
-    [[settings.fields.validations]]
+    [[extensions.settings.fields.validations]]
     name = "choices"
     value = "[\"info\", \"success\", \"warning\", \"critical\"]"
 # [END custom-banner.optional-properties]
 #[START custom-banner.req-properties]
-  [[settings.fields]]
+  [[extensions.settings.fields]]
   key = "collapsible"
   type = "boolean"
   name = "Show collapsible description."
