@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
   reactExtension,
   Banner,
   useSettings,
+  useDeliveryGroups,
+  useDeliveryGroup,
 } from "@shopify/ui-extensions-react/checkout";
 
 // [START custom-banner.ext-point]
@@ -18,17 +20,24 @@ function App() {
   // [START custom-banner.use-settings]
   // Use the merchant-defined settings to retrieve the extension's content
   // Use the merchant-defined settings to retrieve the extension's content
-  const {title: merchantTitle, description, collapsible, status: merchantStatus} = useSettings();
 
-  // Set a default status for the banner if a merchant didn't configure the banner in the checkout editor
-  const status = merchantStatus ?? 'info';
-  const title = merchantTitle ?? 'Custom Banner';
+  const [showBanner, setShowBanner] = useState(false)
+  const {trigger_target, trigger_value, description} = useSettings();
+  const deliveryGroups = useDeliveryGroups();
+  const {
+    selectedDeliveryOption,
+  } = useDeliveryGroup(deliveryGroups[0]);
+
+useEffect(() => {
+  selectedDeliveryOption.carrier.name === trigger_value ? setShowBanner(true) : setShowBanner(false)
+}, [selectedDeliveryOption.carrier.name])
+
   // [END custom-banner.use-settings]
-
+  // if useDeliveryGroups()
   // [START custom-banner.render]
   // Render the banner
-  return (
-    <Banner title={title} status={status} collapsible={collapsible}>
+  return ( showBanner &&
+    <Banner title={`The ${trigger_target} you chose is ${trigger_value}`}>
       {description}
     </Banner>
   );
