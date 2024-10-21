@@ -17,7 +17,6 @@ export { deliveryAddress };
 function App() {
   // [START custom-banner.use-settings]
   // Use the merchant-defined settings to retrieve the extension's content
-  // Use the merchant-defined settings to retrieve the extension's content
   const {title: merchantTitle, description, collapsible, status: merchantStatus} = useSettings();
 
   // Set a default status for the banner if a merchant didn't configure the banner in the checkout editor
